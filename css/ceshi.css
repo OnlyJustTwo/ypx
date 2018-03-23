@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    width: 1349px;
+    height: 12vh;
+    margin: auto;
+    background-color: #505050;
+}
+.nav>img{
+    margin-top: 3vh;
+    margin-left: 280px;
+}
+.ceshibg{
+    width: 1349px;
+    height: 88vh;
+    margin: auto;
+    background-image: url("../images/bg.jpg");
+}
+.ceshitt{
+    font-size: 25px;
+    display: block;
+    margin-top: 10px;
+}
+.blankk{
+    display: inline-block;
+    margin-top: 10vh;
+    width: 1200px;
+    height: 700px;
+    background-color: white;
+}
+.ceshitb{
+    width: 100%;
+    height: 300px;
+    font-size: 20px;
+    margin: 20px auto;
+}
+.tbtr{
+    margin-top: 10px;
+}
+.speed{
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #ff8324;
+    color: white;
+    font-size: 20px;
+}
+.ceshiin{
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #35b84d;
+    color: white;
+    font-size: 20px;
+}
+.respeed{
+    width: 300px;
+    height: 50px;
+    background-color: #eeb941;
+    border-radius: 10px;
+    color: white;
+    font-size: 22px;
+}
+.ceshirt{
+    text-align: left;
+    margin-top: 20px;
+}
+.ceshirt>p,span{
+    font-size: 18px;
+}
+.chak{
+    height: 50px;
+    background-color: #eeb941;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    margin-left: 10px;
+}
+.imgk{
+    width: 100%;
+    height: 240px;
+    background-color: #2aabd2;
+    margin-top: 20px;
+    text-align: left;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+.imgk>p{
+    font-size: 15px;
+}
+.imgk>img{
+    margin-top: 20px;
+}
