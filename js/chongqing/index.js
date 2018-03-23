@@ -352,6 +352,7 @@ $("#multiple").keyup(function () {
     var value=this.value;
     var min=1;
     var max=1000;
+    console.log(value)
     if(parseInt(value)<min||parseInt(value)>max){
         this.value='65536';
     }
@@ -413,7 +414,7 @@ $(".btn-now").eq(1).click(function () {
         readybox.push(numsarray);
         $(".bet").text(numsarray[2].bet);
         multiple = parseInt($("#multiple").val());
-        var pay = parseFloat(numsarray[2].bet) * 2 * parseFloat(mypay) * multiple;
+        var pay = parseInt(numsarray[2].bet) * 2 * parseFloat(mypay) * parseInt(multiple);
         $(".pay").text(pay);
         var shownum = JSON.stringify(numsarray[3]);
         shownum = shownum.replace(/\{|}/g, '');
@@ -3547,6 +3548,6 @@ $("#multiple").bind("keyup",function(){
 $(".times-btn").bind("click",function(){
     shishi()
 });
-$("[name='money']").bind("keydown",function(){
+$("[name='money']").bind("click",function(){
     shishi();
 });
