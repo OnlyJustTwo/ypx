@@ -348,41 +348,47 @@ $("[name='money']").click(function () {
 });
 //===============================================倍数
 var multiple = 1;
-$("#multiple").blur(function () {
+$("#multiple").keyup(function () {
     var value=this.value;
     var min=1;
     var max=1000;
     if(parseInt(value)<min||parseInt(value)>max){
         this.value='65536';
     }
+    multiple=value
 });
-$("#multipleFirst").blur(function () {
+$("#multipleFirst").keyup(function () {
     var value=this.value;
     var min=1;
     var max=1000;
     if(parseInt(value)<min||parseInt(value)>max){
         this.value='65536';
     }
+    multiple=value
 });
 $(".times-btn").eq(0).click(function () {
     var num=parseInt($("#multiple").val());
     if(num<=1){num=1}else {num=num-1}
     $("#multiple").val(num);
+    multiple=num;
 });
 $(".times-btn").eq(1).click(function () {
     var num=parseInt($("#multiple").val());
     if(num>=65536){num=65536}else {num=num+1}
     $("#multiple").val(num);
+    multiple=num;
 });
 $(".times-btn1").eq(0).click(function () {
     var num=parseInt($("#multipleFirst").val());
     if(num<=1){num=1}else {num=num-1}
     $("#multipleFirst").val(num);
+    multiple=num;
 });
 $(".times-btn1").eq(1).click(function () {
     var num=parseInt($("#multipleFirst").val());
     if(num>=65536){num=65536}else {num=num+1}
     $("#multipleFirst").val(num);
+    multiple=num;
 });
 
 //==============================================================================================清空号码
@@ -481,7 +487,7 @@ function chooseball() {
                                     }
                                 }
                                 if (zuxuan120.length < 5) {
-                                    alert("输入不正确");
+                                    
                                     $(".num").removeClass("bg-fangzi");
                                     numsarray = []
                                 } else {
@@ -660,7 +666,7 @@ function chooseball() {
                                     }
                                 }
                                 if (zuxuan24.length < 4) {
-                                    alert("输入不正确");
+                                    
                                     $(".num").removeClass("bg-fangzi");
                                     numsarray = []
                                 } else {
@@ -702,7 +708,7 @@ function chooseball() {
                                     }
                                 }
                                 if (erchonghao.length < 2) {
-                                    alert("输入不正确");
+                                    
                                     $(".num").removeClass("bg-fangzi");
                                     numsarray = []
                                 } else {
@@ -740,7 +746,7 @@ function chooseball() {
                                     }
                                 }
                                 if (zuxuan24.length < 4) {
-                                    alert("输入不正确");
+                                    
                                     $(".num").removeClass("bg-fangzi");
                                     numsarray = []
                                 } else {
@@ -780,7 +786,7 @@ function chooseball() {
                                     }
                                 }
                                 if (erchonghao.length < 2) {
-                                    alert("输入不正确");
+                                    
                                     $(".num").removeClass("bg-fangzi");
                                     numsarray = []
                                 } else {
@@ -1760,7 +1766,7 @@ function wu(k) {
         }
     }
     if (tenths.length == 0 || ths.length == 0 || hund.length == 0 || tenbt.length == 0 || abt.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].万位 = tenths;
@@ -1793,7 +1799,7 @@ function danshi(k, q) {
     if (shuru) {
         numsarray[3].号码 = num;
     } else {
-        alert("输入不正确");
+        
         numsarray = [];
         k.val(null);
     }
@@ -1829,7 +1835,7 @@ function chonghao(k, p, q) {
         numsarray[3].单号 = danhao;
     } else {
         numsarray = [];
-        alert("输入不正确")
+        
     }
     console.log(numsarray)
 }
@@ -1864,7 +1870,7 @@ function qiansi(k) {
         }
     }
     if (tenths.length == 0 || ths.length == 0 || hund.length == 0 || tenbt.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].万位 = tenths;
@@ -1904,7 +1910,7 @@ function housi(k) {
         }
     }
     if (ths.length == 0 || hund.length == 0 || tenbt.length == 0 || abt.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].千位 = ths;
@@ -1929,7 +1935,7 @@ function qiansan(k, a, b, c) {
         }
     }
     if (a.length == 0 || b.length == 0 || c.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].万位 = a;
@@ -1951,7 +1957,7 @@ function zhongsan(k, a, b, c) {
         }
     }
     if (a.length == 0 || b.length == 0 || c.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].千位 = a;
@@ -1973,7 +1979,7 @@ function housan(k, a, b, c) {
         }
     }
     if (a.length == 0 || b.length == 0 || c.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].百位 = a;
@@ -1997,7 +2003,7 @@ function sum(k, a) {
 
     }
     if (sum.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].和值 = sum;
@@ -2020,7 +2026,7 @@ function ersum(k, a) {
 
     }
     if (sum.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].和值 = sum;
@@ -2042,7 +2048,7 @@ function zusansum(k, a) {
         }
     }
     if (sum.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].和值 = sum;
@@ -2064,7 +2070,7 @@ function zuersum(k, a) {
         }
     }
     if (sum.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].和值 = sum;
@@ -2086,7 +2092,7 @@ function sandifference(k) {
         }
     }
     if (difference.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].跨度 = difference;
@@ -2108,7 +2114,7 @@ function erdifference(k) {
         }
     }
     if (difference.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].跨度 = difference;
@@ -2127,7 +2133,7 @@ function zuxuan(k, x) {
         }
     }
     if (zuxuan.length < x) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].号码 = zuxuan;
@@ -2160,7 +2166,7 @@ function zusandan(k) {
     if (shuru) {
         numsarray[3].号码 = zusandan;
     } else {
-        alert("输入不正确");
+        
         numsarray = []
     }
     console.log(numsarray);
@@ -2192,7 +2198,7 @@ function zuliudan(k) {
     if (shuru) {
         numsarray[3].号码 = zuliudan;
     } else {
-        alert("输入不正确");
+        
         numsarray = []
     }
     console.log(numsarray);
@@ -2224,7 +2230,7 @@ function zuliumix(k) {
     if (shuru) {
         numsarray[3].号码 = zuliumix;
     } else {
-        alert("输入不正确");
+        
         numsarray = []
     }
     console.log(numsarray);
@@ -2240,7 +2246,7 @@ function baodan(k) {
         }
     }
     if (num.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].号码 = num;
@@ -2259,7 +2265,7 @@ function qianerxing(k, a, b) {
         }
     }
     if (a.length == 0 || b.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].万位 = a;
@@ -2279,7 +2285,7 @@ function houerxing(k, a, b) {
         }
     }
     if (a.length == 0 || b.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].十位 = a;
@@ -2314,7 +2320,7 @@ function zuerdan(k) {
     if (shuru) {
         numsarray[3].号码 = zuerdan;
     } else {
-        alert("输入不正确");
+        
         numsarray = []
     }
     console.log(numsarray);
@@ -2329,7 +2335,7 @@ function yima(k) {
         }
     }
     if (yima.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].号码 = yima;
@@ -2346,7 +2352,7 @@ function erma(k) {
         }
     }
     if (erma.length < 2) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].号码 = erma;
@@ -2363,7 +2369,7 @@ function saCnma(k) {
         }
     }
     if (saCnma.length < 3) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].号码 = saCnma;
@@ -2399,7 +2405,7 @@ function qianerdanshuang(k, a, b) {
         }
     }
     if (a.length == 0 || b.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].万位 = a;
@@ -2436,7 +2442,7 @@ function houerdanshuang(k, a, b) {
         }
     }
     if (a.length == 0 || b.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].十位 = a;
@@ -2484,7 +2490,7 @@ function qiansandanshuang(k, a, b, c) {
         }
     }
     if (a.length == 0 || b.length == 0 || c.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].万位 = a;
@@ -2533,7 +2539,7 @@ function housandanshuang(k, a, b, c) {
         }
     }
     if (a.length == 0 || b.length == 0 || c.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].百位 = a;
@@ -2588,7 +2594,7 @@ function specialnum(k, a, b, c) {
         }
     }
     if (a.length == 0 || b.length == 0 || c.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].前三 = a;
@@ -2627,7 +2633,7 @@ function baijialenum(k, a, b) {
 
     }
     if (a.length == 0 && b.length == 0) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].庄 = a;
@@ -2645,7 +2651,7 @@ function quwei(k, x) {
         }
     }
     if (quwei.length < x) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].号码 = quwei;
@@ -2694,7 +2700,7 @@ function longhu(k) {
         }
     }
     if (longhu.length < 1 || longhu.length < 1) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].位置 = weizhi;
@@ -2738,7 +2744,7 @@ function renyigame(k, a) {
         }
     }
     if ((parseInt(tenths.length) + parseInt(ths.length) + parseInt(hund.length) + parseInt(tenbt.length) + parseInt(abt.length)) < a) {
-        alert("输入不正确");
+        
         numsarray = [];
     } else {
         numsarray[3].万位 = tenths;
@@ -2787,7 +2793,7 @@ function renerzhidan(k, a, b) {
         numsarray[3].位置 = weizhi;
         numsarray[3].号码 = num;
     } else {
-        alert("输入不正确");
+        
         numsarray = [];
         a.val(null);
     }
@@ -2825,7 +2831,7 @@ function renyisum(k, a, b) {
         numsarray[3].位置 = weizhi;
         numsarray[3].和值 = sum;
     } else {
-        alert("输入不正确");
+        
         numsarray = [];
     }
     console.log(numsarray);
@@ -2861,7 +2867,7 @@ function renyifu(k, a, b) {
         numsarray[3].位置 = weizhi;
         numsarray[3].号码 = num;
     } else {
-        alert("输入不正确");
+        
         numsarray = [];
     }
     console.log(numsarray);
@@ -2906,7 +2912,7 @@ function renerzudan(k, a, b) {
         numsarray[3].位置 = weizhi;
         numsarray[3].号码 = num;
     } else {
-        alert("输入不正确");
+        
         numsarray = [];
         a.val(null);
     }
@@ -2944,7 +2950,7 @@ function renyizusum(k, a, b) {
         numsarray[3].位置 = weizhi;
         numsarray[3].号码 = num;
     } else {
-        alert("输入不正确");
+        
         numsarray = [];
     }
     console.log(numsarray);
@@ -2990,7 +2996,7 @@ function renzusandan(k, a, b) {
         numsarray[3].位置 = weizhi;
         numsarray[3].号码 = num;
     } else {
-        alert("输入不正确");
+        
         numsarray = [];
         a.val(null);
     }
@@ -3037,7 +3043,7 @@ function renzuliudan(k, a, b) {
         numsarray[3].位置 = weizhi;
         numsarray[3].号码 = num;
     } else {
-        alert("输入不正确");
+        
         numsarray = [];
         a.val(null);
     }
@@ -3084,7 +3090,7 @@ function rensaCnmix(k, a, b) {
         numsarray[3].位置 = weizhi;
         numsarray[3].号码 = num;
     } else {
-        alert("输入不正确");
+        
         numsarray = [];
         a.val(null);
     }
@@ -3138,7 +3144,7 @@ function rensishier(k) {
         numsarray[3].单号 = dan;
     } else {
         numsarray = [];
-        alert("输入不正确")
+        
     }
     console.log(numsarray)
 }
@@ -3189,7 +3195,7 @@ function rensisi(k) {
         numsarray[3].重号 = sanchong;
         numsarray[3].单号 = dan;
     } else {
-        alert("输入不正确");
+        
         numsarray = [];
     }
     console.log(numsarray);
@@ -3512,3 +3518,35 @@ $("#smallList").click(function () {
     $("#bigList").css({"margin-left":"0px","transition":"all .3s linear"})
     $("#smallList").css({"left":"-100px","transition":"all .3s linear"})
 })
+//=================绑定事件实时获取注数
+function shishi() {
+    chooseball();
+    if (numsarray.length!=0){
+        $(".otherText").eq(0).html(parseInt(numsarray[2].bet));
+        $(".otherText").eq(1).html(parseInt(numsarray[2].bet)* 2 * parseFloat(mypay) * multiple)
+    }else{
+        $(".otherText").eq(0).html(0);
+        $(".otherText").eq(1).html(0)
+    }
+}
+$(".num").bind("click",function(){
+    shishi()
+});
+$(".num-btn").bind("click",function(){
+    shishi()
+});
+$(".num-btn").bind("click",function(){
+    shishi()
+});
+$("textarea").bind("keypress",function(){
+    shishi()
+});
+$("#multiple").bind("keyup",function(){
+    shishi()
+});
+$(".times-btn").bind("click",function(){
+    shishi()
+});
+$("[name='money']").bind("keydown",function(){
+    shishi();
+});
